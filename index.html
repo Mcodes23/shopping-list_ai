@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPING LIST AI</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="./images/shopping-cart.png" alt="shopping cart" />
+        <h1>SHOPPING LIST AI</h1>
+      </header>
+      <main>
+        <section class="ai-integration">
+          <div class="section-header">
+            <img src="./images/bot.png" alt="AI assistant bot" />
+            <p>What do you want to cook?</p>
+          </div>
+          <form>
+            <input type="text" placeholder="Chapati for 4 people" />
+            <button type="submit">
+              <img src="images/search.png" alt="Search icon" />
+            </button>
+          </form>
+          <div class="ai-response">
+            <img src="./images/brain.png" alt="AI thinking icon" />
+            <p>Suggested list:</p>
+          </div>
+        </section>
+        <section class="list-section">
+          <div class="tasks">
+            <img src="./images/checklist.png" alt="Checklist icon" />
+            <p>Your Full List</p>
+          </div>
+          <form class="add-item-form">
+            <input
+              type="text"
+              placeholder="Add an item..."
+              aria-label="Add item to list"
+            />
+            <button type="submit">Add</button>
+          </form>
+        </section>
+        <div class="options">
+          <button>Save List</button>
+          <button>Share</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
