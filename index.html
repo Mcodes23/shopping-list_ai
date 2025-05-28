@@ -22,22 +22,32 @@
             <img src="./images/bot.png" alt="AI assistant bot" />
             <p>What do you want to cook?</p>
           </div>
-          <form>
-            <input type="text" placeholder="Chapati for 4 people" />
+          <form class="ai-form">
+            <input type="text" placeholder="e.g, Chapati for 4 people" />
             <button type="submit">
               <img src="images/search.png" alt="Search icon" />
             </button>
           </form>
-          <div class="ai-response">
+          <div class="ai-response section-header">
             <img src="./images/brain.png" alt="AI thinking icon" />
             <p>Suggested list:</p>
           </div>
+          <ul class="ai-suggested-list">
+            <li>
+              <span class="item-left"> ✅ Wheat Flour </span>
+              <span class="item-right">📋</span>
+            </li>
+            <li>
+              <span class="item-left"> ✅ Cooking Oil </span>
+              <span class="item-right">📋</span>
+            </li>
+            <li>
+              <span class="item-left"> ✅ Salt </span>
+              <span class="item-right">📋</span>
+            </li>
+          </ul>
         </section>
         <section class="list-section">
-          <div class="tasks">
-            <img src="./images/checklist.png" alt="Checklist icon" />
-            <p>Your Full List</p>
-          </div>
           <form class="add-item-form">
             <input
               type="text"
@@ -46,10 +56,14 @@
             />
             <button type="submit">Add</button>
           </form>
+          <div class="tasks section-header">
+            <img src="./images/checklist.png" alt="Checklist icon" />
+            <p>Your Full List:</p>
+          </div>
         </section>
         <div class="options">
-          <button>Save List</button>
-          <button>Share</button>
+          <button class="custom-btn">Save List</button>
+          <button class="custom-btn">Share</button>
         </div>
       </main>
     </div>

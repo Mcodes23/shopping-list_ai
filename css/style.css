@@ -17,25 +17,32 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
-  max-width: 450px;
-  min-width: 320px;
-  border-radius: 32px;
+  max-width: 400px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  border-radius: 24px;
   background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 header {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  padding: 40px 0px;
+  padding: 20px 0px;
 }
 header img {
   height: 45px;
   width: 45px;
+}
+header,
+h1,
+p {
+  font-family: "Poppins", sans-serif;
 }
 header h1 {
   font-family: "Poppins", sans-serif;
@@ -46,7 +53,7 @@ header h1 {
 .section-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.4rem;
   padding-bottom: 8px;
 }
@@ -58,4 +65,112 @@ header h1 {
   font-size: 1.2rem;
   color: #333333;
   font-weight: 600;
+}
+form {
+  display: flex;
+  width: 100%;
+  max-width: 330px;
+  border: 2px solid #b0b0b0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #5b9c84;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form button:hover {
+  background-color: #4a8871;
+}
+
+.ai-form button img {
+  width: 20px;
+  height: 20px;
+  color: white;
+  filter: brightness(0) invert(1);
+}
+
+.ai-response {
+  padding: 15px 0px;
+}
+
+.ai-response img {
+  height: 24px;
+  width: 24px;
+}
+.ai-suggested-list {
+  list-style: none;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.ai-suggested-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-right {
+  font-size: 1.2rem;
+}
+
+.tasks {
+  padding: 15px 0px;
+}
+.tasks img {
+  height: 24px;
+  width: 24px;
+}
+.add-item-form button {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.custom-btn {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #5b9c84;
+  border-radius: 1rem;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #4a8871;
 }
