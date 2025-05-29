@@ -153,6 +153,23 @@ form button:hover {
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
+.item-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #4caf50;
+  cursor: pointer;
+}
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.delete-btn i {
+  color: rgb(234, 152, 152);
+  vertical-align: middle;
+}
 .options {
   display: flex;
   justify-content: center;

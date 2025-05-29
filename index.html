@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -53,13 +57,16 @@
               type="text"
               placeholder="Add an item..."
               aria-label="Add item to list"
+              id="userInput"
             />
-            <button type="submit">Add</button>
+            <button type="submit" id="addTaskBtn">Add</button>
           </form>
+          <div id="alert-container"></div>
           <div class="tasks section-header">
             <img src="./images/checklist.png" alt="Checklist icon" />
             <p>Your Full List:</p>
           </div>
+          <ul id="taskList" class="ai-suggested-list"></ul>
         </section>
         <div class="options">
           <button class="custom-btn">Save List</button>
@@ -67,5 +74,6 @@
         </div>
       </main>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
