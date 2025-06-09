@@ -16,9 +16,31 @@ addItemsBtn.addEventListener("click", (event) => {
     alertContainer.style.color = "red";
     return;
   }
+
+  itemExist(inputValue);
   addNewItems(inputValue);
   inputedItems.value = "";
 });
+// function to check existing item
+function itemExist(input) {
+  const formattedInput = input
+    .toLowerCase()
+    .split(" ")
+    .filter((word) => word.trim() !== "")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  const existingItems = document.querySelectorAll(
+    "#taskList .item-left span:nth-child(2)"
+  );
+  for (const item of existingItems) {
+    if (item.textContent.trim() === formattedInput) {
+      alertContainer.textContent = "Item already exists!";
+      alertContainer.style.color = "orange";
+      return;
+    }
+  }
+}
 // function to add new items
 function addNewItems(input) {
   const liElem = document.createElement("li");
@@ -36,10 +58,17 @@ function addNewItems(input) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  const textNode = document.createTextNode(" " + formattedInput);
+  const textSpan = document.createElement("span");
+  textSpan.textContent = " " + formattedInput;
+  spanLeft.append(checkbox, textSpan);
 
-  spanLeft.append(checkbox, textNode);
-
+  checkbox.addEventListener("click", () => {
+    if (checkbox.checked) {
+      textSpan.style.textDecoration = "line-through";
+    } else {
+      textSpan.style.textDecoration = "none";
+    }
+  });
   const delBtn = document.createElement("button");
   delBtn.innerHTML = `<i class="fas fa-trash"></i>`;
   delBtn.classList.add("delete-btn", "item-right");
