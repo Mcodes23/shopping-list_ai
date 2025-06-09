@@ -19,6 +19,7 @@ addItemsBtn.addEventListener("click", (event) => {
   addNewItems(inputValue);
   inputedItems.value = "";
 });
+// function to add new items
 function addNewItems(input) {
   const liElem = document.createElement("li");
 
@@ -28,10 +29,14 @@ function addNewItems(input) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add("item-checkbox");
+  const formattedInput = input
+    .toLowerCase()
+    .split(" ")
+    .filter((word) => word.trim() !== "") // avoid extra spaces
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
-  const textNode = document.createTextNode(
-    " " + input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
-  );
+  const textNode = document.createTextNode(" " + formattedInput);
 
   spanLeft.append(checkbox, textNode);
 
@@ -46,3 +51,10 @@ function addNewItems(input) {
     liElem.remove();
   });
 }
+
+document.onkeydown = (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    addItemsBtn.click();
+  }
+};
