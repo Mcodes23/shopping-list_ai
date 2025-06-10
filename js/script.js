@@ -16,8 +16,9 @@ addItemsBtn.addEventListener("click", (event) => {
     alertContainer.style.color = "red";
     return;
   }
-
-  itemExist(inputValue);
+  if (itemExist(inputValue)) {
+    return;
+  }
   addNewItems(inputValue);
   inputedItems.value = "";
 });
@@ -37,9 +38,10 @@ function itemExist(input) {
     if (item.textContent.trim() === formattedInput) {
       alertContainer.textContent = "Item already exists!";
       alertContainer.style.color = "orange";
-      return;
+      return true;
     }
   }
+  return false;
 }
 // function to add new items
 function addNewItems(input) {
@@ -54,7 +56,7 @@ function addNewItems(input) {
   const formattedInput = input
     .toLowerCase()
     .split(" ")
-    .filter((word) => word.trim() !== "") // avoid extra spaces
+    .filter((word) => word.trim() !== "")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
